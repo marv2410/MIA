@@ -1,0 +1,23 @@
+# Partimos de la idea de tomar la cadena del romano y cada elemento agregarlo a una lista, 
+# Cada caracter tiene un valor de acuerdo a la lista numero_normal
+numero_normal = [1,5,10,50,100,500,1000]
+numero_romano = ['I','V','X','L','C','D','M']
+romano='XVI'
+i=0
+valor_numero=list(range(len(romano)))
+normal=0
+for n in romano:
+    valor_numero[i]=numero_normal[numero_romano.index(n)]
+#    print(valor_numero[i])
+    i+=1 
+for n in list(range(len(romano))):
+    if n==0:
+        normal=valor_numero[n]
+    elif n+1<len(romano):
+        if (valor_numero[n]<valor_numero[n+1] ):
+            normal=normal-valor_numero[n]
+        else:
+            normal=normal+valor_numero[n]
+    else: 
+        normal=normal+valor_numero[n]
+normal
